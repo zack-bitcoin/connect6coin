@@ -2,7 +2,7 @@ import string,cgi,time, json, random, copy, os, copy, urllib, connect6, urllib2,
 import pybitcointools as pt
 import state_library
 genesis={'zack':'zack', 'length':-1, 'nonce':'22', 'sha':'00000000000'}
-genesisbitcoin=291266-1224#1220
+genesisbitcoin=291374-1170#1220
 #replace 291266 with the current bitcoin block count.
 chain=[genesis]
 chain_db='chain.db'
@@ -176,6 +176,7 @@ def difficulty(bitcoin_count, leng):
 #    hashes_required=int((10**60)*((9.0/10)**(float(bitcoin_count)-float(genesisbitcoin)-(float(leng)/25)))+1)#for laziness, every 6 seconds??
     except:
         hashes_required=999999999999999999999999999999999999999999999999999999999999
+#    print('hashes_required: ' +str(hashes_required))
     out=buffer(hex(int('f'*64, 16)/hashes_required)[2:], 64)
     return out
 def blockhash(chain_length, nonce, state, transactions, bitcoin_hash):
@@ -238,7 +239,7 @@ def verify_transactions(txs, state):
     txs=copy.deepcopy(txs)
     if len(txs)==0:
         return {'bool':True, 'newstate':state}
-    print('txs: ' +str(txs))
+#    print('txs: ' +str(txs))
     length=len(txs)
     state=copy.deepcopy(state)
     remove_list=[]
