@@ -192,7 +192,7 @@ def new_game(tx):
     if 'time' not in tx:
         tx['time']=5
     if 'size' not in tx:
-        tx['size']=13
+        tx['size']=19
     if 'white' not in tx:
         tx['white']=[]
     if 'black' not in tx:
@@ -349,7 +349,7 @@ def newGameCheck(i, state):
     if 'time' not in i:
         i['time']=5
     if 'size' not in i:
-        i['size']=13
+        i['size']=19
     if 'white' not in i:
         i['white']=[]
     if 'black' not in i:
@@ -359,7 +359,7 @@ def newGameCheck(i, state):
     if (type(i['time']) != type(3)):
         print('7')
         return False
-    if type(i['size']) != type(3) or i['size']<3 or i['size']>30:
+    if type(i['size']) != type(3) or i['size']<7 or i['size']>50:
         print('8')
         return False
     if type(i['white']) != type([1,2]) or type(['black']) != type([1,2]):
