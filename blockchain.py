@@ -3,6 +3,7 @@ import pybitcointools as pt
 import state_library
 genesis={'zack':'zack', 'length':-1, 'nonce':'22', 'sha':'00000000000'}
 genesisbitcoin=291266-1224#1220
+#replace 291266 with the current bitcoin block count.
 chain=[genesis]
 chain_db='chain.db'
 transactions_database='transactions.db'
